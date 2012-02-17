@@ -158,7 +158,7 @@ h5 {text-transform: none;letter-spacing: 0; font-size: 11px;}
 .content span.meta a {color:#222;}
 
 
-.post {margin-bottom: 40px}
+.post {margin-bottom: 40px; position: relative;}
 .post p {line-height: 1.66em;}
 .more a, .recent li p {font-style: normal;}
 .recent h5 {
@@ -396,7 +396,12 @@ margin: 0 0 0 0;
 
 
 
-
+body.category-blog .toggle_container input[type="text"],
+body.category-blog .toggle_container input[type="password"],
+body.category-blog textarea,
+body.category-blog .toggle_container .area,
+body.category-blog .toggle_container input[type="email"],
+body.category-blog #share div input[type="text"],
 body.single-post .toggle_container input[type="text"],
 body.single-post .toggle_container input[type="password"],
 body.single-post textarea,
@@ -614,7 +619,7 @@ p2 {line-height: 17px}
 
 .galleria-errors {display: none!important; left:-999em;}
 
-body.single-post .galleria-bar {display: none!important;}
+body.category-blog .galleria-bar, body.single-post .galleria-bar {display: none!important;}
 
 a.reloadimgholder {width:156px;height:156px; display: block;}
 
@@ -805,7 +810,7 @@ div.jp-pause {
 
 #overgallery {
 position: absolute;
-top: 20%;
+top: 10%;
 background: rgba(255, 255, 255, .9);
 left: 282px;
 z-index: 2;
@@ -864,3 +869,5 @@ top: 0;
 right: 0;
 padding: 0!important;
 }
+
+.viewfull {position: absolute; top:36px; right:0;}

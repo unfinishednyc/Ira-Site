@@ -22,11 +22,11 @@ Template Name: IraLippkeMap
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
   <script type="text/javascript"  src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery.prettyPhoto.js" ></script>
-  <script type="text/javascript" src="http://216.70.89.244/wp-content/themes/ira/js/video.js"></script>
+  <script type="text/javascript" src="http://dev.iralippkestudios.com/wp-content/themes/ira/js/video.js"></script>
   
   
   <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/infobox.js"></script>
-  <script type="text/javascript" src="http://216.70.89.244/wp-content/themes/ira/js/markerclusterer_compiled.js"></script>
+  <script type="text/javascript" src="http://dev.iralippkestudios.com/wp-content/themes/ira/js/markerclusterer_compiled.js"></script>
   <script type="text/javascript">
            
     //<![CDATA[
@@ -193,7 +193,7 @@ Template Name: IraLippkeMap
     //original code  
     var map = new google.maps.Map(document.getElementById("map"), {
       center: new google.maps.LatLng(29.84064389983441, 2.00),
-      zoom: 2,
+      zoom: 3,
       scrollwheel: false,
       navigationControl: false,
       draggable: true,
@@ -410,7 +410,7 @@ Template Name: IraLippkeMap
      
         jQuery.ajax({
             type: "GET",
-            url:"http://216.70.89.244/?page_id=1188",
+            url:"http://dev.iralippkestudios.com/?page_id=1188",
             data: data,
             dataType: "json",
             success: function(data){
@@ -549,7 +549,7 @@ Template Name: IraLippkeMap
         google.maps.event.addDomListener(GlobalZoomControl, 'click', function(){
             //alert("zoomin");
            
-           map.setZoom(2);
+           map.setZoom(3);
         });
       }
 
@@ -559,7 +559,60 @@ Template Name: IraLippkeMap
 
 <body class="mapgallery" onload="load();">
      
-<?php include('inc/static-menu.php'); ?>
+	<div id="header">
+	
+		<h1>
+			<a href="<?php bloginfo('home'); ?>"><?php 
+	
+				//Detect special conditions devices
+				$iPod = stripos($_SERVER['HTTP_USER_AGENT'],"iPod");
+				$iPhone = stripos($_SERVER['HTTP_USER_AGENT'],"iPhone");
+				$iPad = stripos($_SERVER['HTTP_USER_AGENT'],"iPad");
+				if(stripos($_SERVER['HTTP_USER_AGENT'],"Android") && stripos($_SERVER['HTTP_USER_AGENT'],"mobile")){
+				        $Android = true;
+				}else if(stripos($_SERVER['HTTP_USER_AGENT'],"Android")){
+				        $Android = false;
+				        $AndroidTablet = true;
+				}else{
+				        $Android = false;
+				        $AndroidTablet = false;
+				}
+				$webOS = stripos($_SERVER['HTTP_USER_AGENT'],"webOS");
+				$BlackBerry = stripos($_SERVER['HTTP_USER_AGENT'],"BlackBerry");
+				$RimTablet= stripos($_SERVER['HTTP_USER_AGENT'],"RIM Tablet");
+				//do something with this information
+				if( $iPod || $iPhone ){
+				?> 
+				<img style="display:block;" src="<?php bloginfo('stylesheet_directory'); ?>/images/logo-dark.png" alt="<?php bloginfo( 'name' ); ?>" width="344" height="18" />
+				
+				<?php }else if($iPad){
+				?> 
+				<img style="display:block;" src="<?php bloginfo('stylesheet_directory'); ?>/images/logo-dark.png" alt="<?php bloginfo( 'name' ); ?>" width="344" height="18" />
+				
+				<?php } else {  ?> 		
+						<object data="<?php bloginfo('template_directory'); ?>/images/logo.svg" type="image/svg+xml" width="350" height="27" id="mySVGObject"></object>
+				
+				<?php } /*
+				else if($Android){
+				        //were an Android Phone -- do something here
+				}else if($AndroidTablet){
+				        //were an Android Phone -- do something here
+				}else if($webOS){
+				        //were a webOS device -- do something here
+				}else if($BlackBerry){
+				        //were a BlackBerry phone -- do something here
+				}else if($RimTablet){
+				        //were a RIM/BlackBerry Tablet -- do something here
+				}
+				*/
+			
+			?></a></h1>
+	
+		<h2 class="flicktitle">World Map</h2>
+		<?php wp_nav_menu(); ?>
+		
+	</div><!--/#header-->
+
 
     <div id="map" style="height: 100%; width: 100%; position: relative; background-color: rgb(229, 227, 223); overflow: hidden; cursor: default;"></div>
 
@@ -605,11 +658,35 @@ Template Name: IraLippkeMap
 			return false;
 	  });
 	
-	});	
-</script>
+		
+		$('.flicktitle').click(function() {
+		  $(this).fadeTo("fast", 0, "linear");
+		  $('.menu-main-container').slideToggle("fast", "linear");
+		});
+	
+		$('#menu-main > li.first.menu-item > a').click(function() {
+			$('#menu-main > li.first.menu-item > ul').fadeToggle("fast", "linear");
+			$('#menu-main > li.menu-item > ul > li.menu-item > ul').hide('slow', 0);
+			$('#menu-main > li.filmmakers_menu  > ul').fadeOut("fast");
+			return false;	
+	  });
+	
+		$('#menu-main > li.menu-item > ul.sub-menu > li.menu-item > a').click(function() {
+			$('#menu-main > li.menu-item > ul.sub-menu > li.menu-item > ul').css('display','none');
+			$(this).siblings('ul').fadeToggle("fast", "linear");
+			return false;
+	  });
 
 
-    
+		$('#menu-main > li.filmmakers_menu > a').click(function() {
+			$('#menu-main > li.first.menu-item > ul').fadeOut('fast');;
+			$('#menu-main > li.filmmakers_menu  > ul').fadeToggle("fast", "linear");
+			return false;			
+	  });
+	
+	
+
+	});	</script>    
     
         
 </body>

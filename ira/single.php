@@ -88,7 +88,7 @@
 			<span class="meta">POSTED BY <?php the_author();?> on <?php the_date(); ?></span>
 
 
-			<?php if(get_field('link_to_full_gallery')) : ?><p>
+			<?php if(get_field('link_to_full_gallery')) : ?><p class="viewfull">
 		    	<a href="<?php the_field('link_to_full_gallery');?>">> View Full Gallery</a>
 		    </p><? endif; ?>
 
