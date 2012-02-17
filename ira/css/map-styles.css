@@ -1,0 +1,120 @@
+        #menu
+        {
+            position: absolute;
+            bottom:10px;
+        }
+        .dropsheet
+        {
+            background-color/**/: #FFFFFF;     
+            background-image/**/: none;     
+            opacity: 0.5;     
+            filter: alpha(opacity=75);
+        }
+        p1
+        {
+            color: #FFFFFF;
+            font-family: "Helvetica", sans-serif;
+            font-size: small;
+        }
+        p2
+        {
+            color: #D4D0C8;
+            font-family: "Helvetica", sans-serif;
+            font-size: small;
+            font-style: italic;
+        }
+        p3
+        {
+            color: #D4D0C8;
+            font-family: "Helvetica", sans-serif;
+            font-size: small;
+        }
+        .infoboxtext
+        {
+            padding: 10px;
+        }
+        .infopic
+        {
+            padding: 10px;
+        }
+        .zoomControl {
+            margin-right: -1px;
+            line-height: 40px;
+            height: 40px;
+            width:35px;
+            cursor: pointer;
+            position: relative;
+            text-align: center;
+            float: left;
+        }
+        .zoomControl:hover {
+            background: #333;
+            background: -webkit-gradient(linear, left top, left bottom, from(#444444), to(#222222));
+            background: -moz-linear-gradient(top, #444444, #222222);
+        }
+        .zoomControl img {
+            vertical-align: middle; padding: 12px 0
+        }
+        #zoomOut img{
+            padding-top: 17px
+        }
+        .filterControl {
+            margin-right: -1px;
+            line-height: 40px;
+            height: 40px;
+            width:35px;
+            cursor: pointer;
+            position: relative;
+            text-align: center;
+            float: left;
+        
+        }
+        
+        .filterControl:hover {
+             background: #333;
+            background: -webkit-gradient(linear, left top, left bottom, from(#444444), to(#222222));
+            background: -moz-linear-gradient(top, #444444, #222222);
+        }
+        
+        .filterControl img {
+            vertical-align: middle; padding: 13px 0
+        }
+        .filterControl p {
+            color: #FFFFFF;
+            font-family: "Helvetica", sans-serif;
+            font-size: small;
+            vertical-align: middle;
+        }
+        #footer {
+            width:100%;
+            height: 40px;
+            border-top: 1px solid #000;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+            line-height: 40px;
+            font-size: 11px;
+            background: #171717;
+            background: -webkit-gradient(linear, left top, left bottom, from(#282828), to(#171717));
+            background: -moz-linear-gradient(top, #282828, #171717);
+        }
+        #footer:before {
+            border-top: 1px solid #2c2c2c;
+            border-top: 1px solid rgba(255,255,255,.05); 
+            content:""; 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            right:0; 
+            bottom:0; 
+            z-index: 0;
+        }
+        #message { 
+            position:absolute; 
+            padding:10px; 
+            background:#555; 
+            color:#fff; 
+            width:75px; 
+        }
+        

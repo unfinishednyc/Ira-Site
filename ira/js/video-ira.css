@@ -1,0 +1,114 @@
+
+@import url("video-js.css");
+
+.tube-css .vjs-controls {
+  opacity: 1; color: #000;
+  height: 50px;
+  bottom: 0;
+  background-color: rgba(0,0,0,.5)
+}
+
+body.mapgallery .tube-css .vjs-controls {
+opacity: 1;
+color: black;
+height: 50px;
+bottom: 0;
+background-color: rgba(0, 0, 0, .5);
+z-index: 99999;
+display: block;
+}
+
+.tube-css .vjs-controls > div {
+  height: 50px; margin: 0; background: none; top: 0;
+  border: none;
+  border-radius: 0; -webkit-border-radius: 0; -moz-border-radius: 0;
+  box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none;
+}
+
+/* Placement of Control Items */
+.tube-css .vjs-controls > div.vjs-play-control       { width: 25px; left: 0; }
+.tube-css .vjs-controls > div.vjs-progress-control   { left: 50px; right: 95px; }
+.tube-css .vjs-controls > div.vjs-time-control       { width: 75px; left: 27px; }
+.tube-css .vjs-controls > div.vjs-volume-control     { width: 50px; right: 35px; }
+.tube-css .vjs-controls > div.vjs-fullscreen-control { width: 50px; right: 0; }
+.tube-css .vjs-controls > div {opacity: .5}
+.tube-css .vjs-controls > div:hover {opacity: 1}
+/* Removing borders on time & progress to join them */
+.tube-css .vjs-controls > div.vjs-progress-control { border-left: none; }
+.tube-css .vjs-controls > div.vjs-time-control { border-right: none; }
+
+
+/* Play/Pause
+-------------------------------------------------------------------------------- */
+.tube-css .vjs-play-control { margin-left: 0; }
+.tube-css.vjs-paused .vjs-play-control span { height: 50px; width:50px;border-left:0; border-top: 0; border-bottom: 0; border-right:0;  margin:0;background: url(../images/video-playpause.gif) no-repeat;}
+.tube-css.vjs-playing .vjs-play-control span { border-left:0; border-top: 0; border-bottom: 0; border-right:0; height: 50px; width:50px; margin: 0;background: url(../images/video-playpause.gif) 0 -50px no-repeat;}
+.tube-css.vjs-paused .vjs-play-control:hover span { border-left-color: #CF1A1A; }
+.tube-css.vjs-playing .vjs-play-control:hover span { border-left-color: #CF1A1A; border-right-color: #CF1A1A; }
+
+/* Time Display
+-------------------------------------------------------------------------------- */
+.tube-css .vjs-controls .vjs-time-control { font-size: 11px; }
+.tube-css .vjs-controls .vjs-time-control span { line-height: 25px; /* Centering vertically */ }
+
+/* Progress
+-------------------------------------------------------------------------------- */
+.tube-css .vjs-progress-holder {
+  margin:12px 10px 0 5px;
+  background: transparent url('vid_player_bar-load.png') 0 14px repeat-x;
+  border-radius: 0; -webkit-border-radius: 0; -moz-border-radius: 0;
+  border:0;
+  height: 28px;
+}
+.tube-css .vjs-progress-control .vjs-load-progress { background: transparent url('vid_player_bar-load.png') 0 14px repeat-x; border-radius: 0; -webkit-border-radius: 0; -moz-border-radius: 0; }
+.tube-css .vjs-progress-control .vjs-play-progress { background:transparent url('vid_player_bar.png') 0 14px repeat-x;  -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; }
+.vjs-progress-holder div {height: 28px;}
+/* Volume
+-------------------------------------------------------------------------------- */
+.tube-css .vjs-volume-control div { padding: 16px 0 0 0; }
+.tube-css .vjs-volume-control div span { border-bottom-color: #666; }
+/* Volume icon color */
+.tube-css .vjs-volume-control div span.vjs-volume-level-on { border-color: #ccc; }
+/* Volume icon hovering color */
+.tube-css .vjs-volume-control:hover div span.vjs-volume-level-on { border-color: #fff; }
+
+/* Fullscreen
+-------------------------------------------------------------------------------- */
+.tube-css .vjs-fullscreen-control div { margin: 0; width:50px; height: 50px; background: url(../images/fullscreen.png) 16px 14px no-repeat;}
+.tube-css.vjs-fullscreen .vjs-fullscreen-control div {background: url(../images/fullscreen.png) 14px -78px no-repeat;}
+/* Big Play Button (at start)
+---------------------------------------------------------*/
+.tube-css div.vjs-big-play-button { 
+  width: 100px; height: 100px; margin: -36px 0 0 -42px;
+  border:0; opacity: 0.9;
+  border-radius:0; -webkit-border-radius: 0; -moz-border-radius: 0;
+
+  /* CSS Background Gradients */
+  /* Default */ background-color: transparent;
+  background: url(../images/video-play.gif) 0 -20px no-repeat;
+
+
+  /* CSS Shadows */
+  box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none;
+  z-index: 99999;
+}
+.tube-css div.vjs-big-play-button:hover {
+  opacity: 1;
+}
+.tube-css div.vjs-big-play-button span {
+  margin: 11px 0 0 26px;
+  /* Drawing the play triangle with borders - http://www.infimum.dk/HTML/slantinfo.html */
+  border-left: 0; /* Width & Color of play icon */
+  /* Height of play icon is total top & bottom border widths. Color is transparent. */
+  border-top: 0; border-bottom: 0;
+}
+
+
+
+/* NEW STYLES */
+
+.vjs-time-control {display: none;}
+.vjs-volume-control div span {width:1px;}
+
+.video-js-box.vjs-fullscreen {background: #FFF; z-index: 99999;}
+.vjs-spinner {display: none!important;}
