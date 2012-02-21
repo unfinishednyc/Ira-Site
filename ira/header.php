@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <?php include('inc/the_page_title.php');
 
 
-	?><link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('stylesheet_directory'); ?>/style.css" />
+	?>	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('stylesheet_directory'); ?>/style.css" />
 
-<?php if(!is_page('press') && ( 'gallery' != get_post_type()) && !is_home()) {?>
+<?php if(!is_page('press') && ( 'mapgallery' == get_post_type()) ) { ?>
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('stylesheet_directory'); ?>/js/pp/css/prettyPhoto.css" />
-	<? } elseif(( 'gallery' != get_post_type()) && !is_home()) {  ?>	
+	<? } elseif(is_page('press')) {  ?>	
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('stylesheet_directory'); ?>/js/pp/css/prettyPhoto-press.css" />
-<? } ?>
-<?php // LOAD IN THE REGULAR STUFF AT THE BEGINNING ?>
-	<script type="text/javascript" src="http://use.typekit.com/tox4tzn.js"></script>
+<? } 
+
+	// LOAD IN THE REGULAR STUFF AT THE BEGINNING
+	
+	?>	<script type="text/javascript" src="http://use.typekit.com/tox4tzn.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/svg.js"></script>	
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <?php ?>
-<?php if(!is_page('press') && ( 'gallery' != get_post_type()) && !is_home()) {?>
+<?php if(!is_page('press') && ( 'mapgallery' == get_post_type()) ) {?>
 	<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery.prettyPhoto.js"></script>
-	<? } elseif(( 'gallery' != get_post_type()) && !is_home()) { ?>
+	<? } elseif(is_page('press')) { ?>
 	<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery.prettyPhoto.press.js"></script><? } ?>
 	<?php if(( 'gallery' == get_post_type() ) || is_home() || ( 'post' == get_post_type() )) { ?><script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/galleria/galleria-1.2.5.js"></script>
 <? } ?>
@@ -69,9 +70,9 @@
 	
 	if(is_page('connect')) { include( 'inc/contact-page-map.php' ); }
 	
-	/* if(is_page('map-test') || ( 'mapgallery' == get_post_type() ) ) { include( 'map-header.php' ); } */ ?>
+	/* if(is_page('map-test') || ( 'mapgallery' == get_post_type() ) ) { include( 'map-header.php' ); } */ 
 
-	<meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+	?>	<meta name="viewport" content="width=device-width, maximum-scale=1.0" />
 
 	<?php wp_head();  
 	

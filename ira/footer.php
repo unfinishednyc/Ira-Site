@@ -271,10 +271,10 @@
 	    $('#contactForm').delay(messageDelay+500).fadeIn();
 	  }
 	}
-	
+</script>
 
 <?php } // gallery  ?>
-	</script>
+
 
 
 
@@ -287,7 +287,7 @@
 if(is_page('press')) { ?>
 	<script type="text/javascript" charset="utf-8">
 		$(document).ready(function(){
-			$(".medialist li a:first").css('display','block');
+			$("ul.medialist > li > .prettyrtrigger > a:first-child").css('display','block');
 			$(".medialist li a[rel^='prettyPhoto']").prettyPhoto({
 				social_tools:false,
 				animation_speed: 'fast',

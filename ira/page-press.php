@@ -11,17 +11,19 @@
 	<span><img src="<?php the_field('bw_press_thumbnail'); ?>" alt="<?php the_title();?>"></span>
 		
 		<?php if(get_field('press_gallery_images')): ?>
- 
+ 			<div class="prettyrtrigger">
 	    <?php while(the_repeater_field('press_gallery_images')): ?>
 	    <a
 				rel="prettyPhoto[<?php the_ID();?>]" 
 				href="<?php the_sub_field('press_gallery_image'); ?>"
-				title="<?php the_sub_field('press_gallery_image_caption'); ?>">
+				<?php if(get_sub_field('press_gallery_image_caption')): ?>
+				title="<?php the_sub_field('press_gallery_image_caption'); ?>" <?php endif; ?>
+				>
 				
 	        <?php the_sub_field('press_gallery_image_alt_text'); ?>
 	        
 			</a>
-    <?php endwhile; endif; ?>
+    <?php endwhile;?></div><?php endif; ?>
 
 	</li>
 	

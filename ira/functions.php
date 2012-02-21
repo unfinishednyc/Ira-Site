@@ -226,8 +226,17 @@ function remove_header_info() {
     remove_action('wp_head', 'start_post_rel_link');
     remove_action('wp_head', 'index_rel_link');
     remove_action('wp_head', 'adjacent_posts_rel_link');
+		
 }
 add_action('init', 'remove_header_info');
+
+// remove comments feed
+
+function remove_comments_rss( $for_comments ) {
+    return;
+}
+add_filter('post_comments_feed_link','remove_comments_rss');
+
 
 // remove extra css that recent comments widget injects
 function remove_recent_comments_style() {

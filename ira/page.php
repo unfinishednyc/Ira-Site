@@ -71,15 +71,12 @@
 	  
 	  <?php endwhile; endif;?>
 
-
 		</ul>		
 	</div>
 
+</div><!-- /.sidebar -->
 
-</div>
-
-<?php endwhile;endif;?>
-
+<?php endwhile; endif;?>
 
 </div><!-- /.content -->
 
